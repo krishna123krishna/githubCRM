@@ -29,7 +29,8 @@ public class BaseClass {
 	@BeforeClass(groups = {"SmokeSuite","RegressionSuite"})
 	public void beforeClassConfig(String Browser) throws Throwable {
 		//String Browser = futil.getdataFromPropertyFile("browser");//when you writing from the suite.xml file
-		String URL = futil.getdataFromPropertyFile("url");
+		String Browser=System.getProperty("browser");
+		//String URL = futil.getdataFromPropertyFile("url");
 		//runtime polymorpshiam or method overriding
 		if(Browser.equalsIgnoreCase("chrome")) {
 			driver=new ChromeDriver();
